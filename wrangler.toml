@@ -1,0 +1,21 @@
+name = "elkey-help"
+main = "src/index.js"
+compatibility_date = "2026-10-30"
+workers_dev = true
+
+[observability]
+enabled = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "elkey_help"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "migrations"
+
+[triggers]
+# Ежедневно в 00:00 UTC: проверка скользящего 7-дневного окна и обслуживание.
+crons = ["0 0 * * *"]
+
+[vars]
+BOT_NAME = "Elkey: Help"
+# Укажите SUPPORT_IDS как secret, например "12345678,87654321".

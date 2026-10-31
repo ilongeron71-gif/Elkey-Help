@@ -1,0 +1,20 @@
+{
+  "name": "elkey-help",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:create": "wrangler d1 create elkey_help",
+    "db:migrate:local": "wrangler d1 migrations apply elkey_help --local",
+    "db:migrate:remote": "wrangler d1 migrations apply elkey_help --remote",
+    "check": "node --check src/index.js && node --check src/handlers.js && node --check src/telegram.js && node --check src/moderation.js && node --check src/social.js && node --check src/games.js && node --check src/support.js && node --check src/cron.js && node --check src/lib/db.js && node --check src/lib/permissions.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
